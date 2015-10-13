@@ -1,6 +1,7 @@
 # base64util
 base64 encode/decode utility for browsers and node.js,
 with polyfill and URL friendly format.
+
 Works with multi-byte and utf8 strings.
 
 ## Usage
