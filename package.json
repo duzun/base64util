@@ -1,0 +1,26 @@
+{
+  "name": "base64util",
+  "version": "1.0.0",
+  "description": "base64 encode/decode utility for browsers and node.js, with polyfill and URL friendly format, works with multi-byte and utf8 strings",
+  "main": "base64.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified yet\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duzun/base64util.git"
+  },
+  "keywords": [
+    "base64",
+    "encode",
+    "decode",
+    "utf8",
+    "url"
+  ],
+  "author": "Dumitru Uzun <contanct@duzun.me> (https://DUzun.Me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duzun/base64util/issues"
+  },
+  "homepage": "https://github.com/duzun/base64util#readme"
+}
