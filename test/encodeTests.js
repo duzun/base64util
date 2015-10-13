@@ -1,6 +1,6 @@
 var should = require('chai').should(),
     base64 = require('../base64'),
-    encode = base64.encode;
+    encode = base64.byteEncode;
 // For encoding test I had used information presented in Base64 Wikipedia Page (English Version).
 // For more information: http://en.wikipedia.org/wiki/Base64
 describe('# Encoding Tests', function(){
