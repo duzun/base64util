@@ -9,6 +9,12 @@ node_js:
 - '0.10'
 - 'iojs'
 
+sudo: false
+
+cache:
+    directories:
+        - node_modules
+
 deploy:
   provider: npm
   email: contact@duzun.me
@@ -17,5 +23,3 @@ deploy:
   on:
     tags: true
     repo: duzun/base64util
-
-sudo: false
