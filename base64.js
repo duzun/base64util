@@ -5,10 +5,11 @@
  *
  *  original of _btoa and _atob by: Tyler Akins (http://rumkin.com)
  *
- *  @author Dumitru Uzun (DUzun.Me)
  *
+ *  @license MIT
+ *  @version 1.0.2
  *  @umd AMD, Browser, CommonJs
- *
+ *  @author Dumitru Uzun (DUzun.Me)
  */
 
 (function(name, root, String) {
@@ -22,10 +23,13 @@
     )
     /*define*/(/*name, */[], function factory() {
 
-        var base64 = {}
+        var base64 = {
+            VERSION: '1.0.2'
+        }
         ,   b64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='
         ,   wsReg = /[\t\n\r\x20\x0C]+/g
         ,   b64i
+        ,   chr = String.fromCharCode
         ,   utf8Encode = function(str) { return unescape( encodeURI( str ) ); }
         ,   utf8Decode = function(str) { return decodeURIComponent( escape( str ) ); }
 
@@ -94,13 +98,13 @@
                     o3 = bits & 0xff;
 
                     if (h3 == 64) {
-                        tmp_arr[ac++] = String.fromCharCode(o1);
+                        tmp_arr[ac++] = chr(o1);
                     }
                     else if (h4 == 64) {
-                        tmp_arr[ac++] = String.fromCharCode(o1, o2);
+                        tmp_arr[ac++] = chr(o1, o2);
                     }
                     else {
-                        tmp_arr[ac++] = String.fromCharCode(o1, o2, o3);
+                        tmp_arr[ac++] = chr(o1, o2, o3);
                     }
                 } while (i < l);
 
@@ -168,6 +172,8 @@
             }
 
         ;
+
+        // if ( typeof chr.bind == 'function' ) chr = chr.bind(String);
 
         // Internal functions
         base64._btoa = _btoa;
