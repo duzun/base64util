@@ -4,8 +4,8 @@
   "description": "base64 encode/decode utility for browsers and node.js, with polyfill and URL friendly format, works with multi-byte and utf8 strings",
   "main": "base64.js",
   "scripts": {
-    "verup": "node ./node_modules/verup",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "verup": "verup",
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "chai": "^3.3.x",
-    "mocha": "^2.3.x",
-    "verup": "^1.3.x"
+    "mocha": "^3.1.x",
+    "verup": "^1.4.x"
   }
 }
