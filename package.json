@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "base64 encode/decode utility for browsers and node.js, with polyfill and URL friendly format, works with multi-byte and utf8 strings",
   "main": "base64.js",
+  "reveal": true,
   "scripts": {
     "verup": "verup",
     "test": "mocha --reporter spec"
