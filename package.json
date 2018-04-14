@@ -1,11 +1,15 @@
 {
   "name": "base64util",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "base64 encode/decode utility for browsers and node.js, with polyfill and URL friendly format, works with multi-byte and utf8 strings",
-  "main": "base64.js",
+  "main": "dist/base64.js",
+  "module": "src/base64.js",
+  "esnext": "src/base64.js",
+  "unpkg": "dist/dist/base64.min.js",
   "reveal": true,
   "scripts": {
     "verup": "verup",
+    "build": "gulp",
     "test": "mocha --reporter spec"
   },
   "repository": {
@@ -27,12 +31,42 @@
   "homepage": "https://duzun.me/playground/encode#base64Encode=Test%20String%20",
   "verup": {
     "files": [
-      "base64.js"
+      "package-lock.json",
+      "src/base64.js"
     ]
   },
   "devDependencies": {
-    "chai": "^3.3.x",
-    "mocha": "^3.1.x",
-    "verup": "^1.4.x"
+    "babel-plugin-external-helpers": "^6.22",
+    "babel-preset-env": "^1.5",
+    "babel-register": "^6.24",
+    "chai": "^3.3",
+    "gulp": "^3.9",
+    "gulp-babel": "^7.0",
+    "gulp-better-rollup": "^3.1",
+    "gulp-load-plugins": "^1.5",
+    "gulp-plugins": "0.0.18",
+    "gulp-qunit": "^2.0",
+    "gulp-rename": "^1.2",
+    "gulp-sourcemaps": "^2.6",
+    "mocha": "^3.1",
+    "require-json5": "^1.0",
+    "rollup-plugin-babel": "^3.0",
+    "rollup-plugin-uglify": "^3.0",
+    "verup": "^1.6"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "laxbreak": true,
+    "laxcomma": true,
+    "undef": true,
+    "unused": true,
+    "sub": true,
+    "expr": true,
+    "bitwise": false,
+    "eqeqeq": false,
+    "boss": true,
+    "eqnull": true,
+    "scripturl": true,
+    "-W041": false
   }
 }

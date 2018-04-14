@@ -1,5 +1,5 @@
 var should = require('chai').should(),
-    base64 = require('../base64'),
+    base64 = require('../dist/base64'),
     encode = base64.byteEncode;
 // For encoding test I had used information presented in Base64 Wikipedia Page (English Version).
 // For more information: http://en.wikipedia.org/wiki/Base64
@@ -38,7 +38,7 @@ describe('# Encoding Tests', function(){
       encode('This is the data, in the clear.').should.equal('VGhpcyBpcyB0aGUgZGF0YSwgaW4gdGhlIGNsZWFyLg==');
       //http://stackoverflow.com/questions/7360403/base-64-encode-and-decode-example-code
       encode('techPass').should.equal('dGVjaFBhc3M=');
-    }); 
+    });
 
     it('Encode Long Texts', function() {
       //Based in http://www.motobit.com/util/base64-decoder-encoder.asp

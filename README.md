@@ -6,16 +6,16 @@ Works with multi-byte and utf8 strings.
 
 ## Usage
 
-### Include `base64` the way you like (AMD/CommonJs/script)
+### Include [`base64`](https://unpkg.com/base64util) the way you like (AMD/CommonJs/script)
 
-```javascript
-// multi-byte string - common JS String - used for text data - gets encoded to utf8
+```js
+// Encodes multi-byte string as utf8 to base64 (common String)
 base64.encode('plain') ;
 
-// multi-byte string - common JS String - used for text data - gets decoded from utf8
+// Decodes to multi-byte string if utf8-encoded as base64
 base64.decode('base64');
 
-// same as encode/decode, but instead of "/+" uses "_-" - URL friendly
+// same as encode/decode, but instead of "/" and "+" uses "_" and "-" (URL friendly)
 base64.urlEncode('plain') ;
 base64.urlDecode('base64');
 
@@ -28,9 +28,30 @@ base64.byteUrlEncode('plain') ;
 base64.byteUrlDecode('base64');
 ```
 
+
+### Polyfill
+
+```js
+if ( typeof atob === 'undefined' ) {
+    var window.atob = base64._atob;
+    var window.btoa = base64._btoa;
+}
+```
+
+or
+
+```js
+base64.polyfill(window);
+```
+
+
 ### String.prototype methods
 
-```javascript
+```js
+
+// Add String.prototype methods:
+bindProto(String.prototype)
+
 'plain'.base64ByteEncode() ;
 'base64'.base64ByteDecode();
 

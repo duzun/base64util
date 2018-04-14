@@ -1,0 +1,13 @@
+{
+    "presets": [
+        [   // npm i -D babel-preset-env
+            "env",
+            {
+                "modules": false, // "amd" | "umd" | "systemjs" | "commonjs" | false
+                // include: ['transform-es2015-modules-umd'],
+                // exclude: ['transform-strict-mode'],
+            },
+        ],
+    ],
+    "compact": false,
+}

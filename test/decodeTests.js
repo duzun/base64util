@@ -1,5 +1,5 @@
 var should = require('chai').should(),
-    base64 = require('../base64'),
+    base64 = require('../dist/base64'),
     decode = base64.decode;
 // For encoding test I had used information presented in Base64 Wikipedia Page (English Version).
 // For more information: http://en.wikipedia.org/wiki/Base64

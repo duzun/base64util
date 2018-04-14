@@ -1,0 +1,7 @@
+/node_modules/
+/test/
+
+.editorconfig
+.travis.yml
+
+gulpfile.js
