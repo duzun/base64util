@@ -5,7 +5,7 @@
   "main": "dist/base64.js",
   "module": "src/base64.js",
   "esnext": "src/base64.js",
-  "unpkg": "dist/dist/base64.min.js",
+  "unpkg": "dist/base64.min.js",
   "reveal": true,
   "scripts": {
     "verup": "verup",
