@@ -16,8 +16,9 @@ matrix:
   include:
     - node_js: stable
       env: COMMAND=jest:cov
-  # allow_failures:
-  #     - node_js: '4.0'
+  allow_failures:
+      - node_js: '5.0'
+      - node_js: '4.0'
 
 
 sudo: false
