@@ -18,7 +18,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 
 [*.{md,markdown}]
- trim_trailing_whitespace = false
+trim_trailing_whitespace = false
 
 [{Makefile,makefile,*.mk}]
 indent_style = tab
@@ -41,4 +41,4 @@ indent_size = 4
 
 [*.yml]
 indent_style = space
-indent_size = 4
+indent_size = 2

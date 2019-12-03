@@ -1,6 +1,6 @@
 {
   "name": "base64util",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "base64 encode/decode utility for browsers and node.js, with polyfill and URL friendly format, works with multi-byte and utf8 strings",
   "main": "dist/base64.js",
   "module": "src/base64.js",
@@ -8,9 +8,13 @@
   "unpkg": "dist/base64.min.js",
   "reveal": true,
   "scripts": {
-    "verup": "verup",
-    "build": "gulp",
-    "test": "mocha --reporter spec"
+    "build": "rollup -c rollup.config.js",
+    "test": "mocha --reporter spec",
+    "coverage": "npx nyc --reporter=lcov --reporter=text-summary npm run test",
+    "jest": "npx jest",
+    "jest:watch": "npx jest --watch",
+    "jest:cov": "npx jest --coverage",
+    "verup": "verup"
   },
   "repository": {
     "type": "git",
@@ -36,26 +40,25 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-external-helpers": "^6.22",
-    "babel-preset-env": "^1.5",
-    "babel-register": "^6.24",
-    "chai": "^3.3",
-    "gulp": "^3.9",
-    "gulp-babel": "^7.0",
-    "gulp-better-rollup": "^3.1",
-    "gulp-load-plugins": "^1.5",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-load-plugins": "^2.0.1",
     "gulp-plugins": "0.0.18",
-    "gulp-qunit": "^2.0",
-    "gulp-rename": "^1.2",
-    "gulp-sourcemaps": "^2.6",
-    "mocha": "^3.1",
-    "require-json5": "^1.0",
-    "rollup-plugin-babel": "^3.0",
-    "rollup-plugin-uglify": "^3.0",
-    "verup": "^1.6.1-b"
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "mocha": "^6.2.2",
+    "rollup": "^1.27.8",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "verup": "^1.7.0"
   },
+  "browserslist": "> 0.25%, not dead",
   "jshintConfig": {
-    "esversion": 6,
+    "esversion": 9,
     "laxbreak": true,
     "laxcomma": true,
     "undef": true,
