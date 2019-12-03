@@ -1,11 +1,23 @@
-var should = require('chai').should(),
-    base64 = require('../dist/base64'),
-    decode = base64.decode;
+const g = typeof global == 'undefined' ? window : global;
+const _Buffer = g.Buffer;
+const _atob = g.atob;
+delete g.Buffer;
+delete g.atob;
+
+// const esm = require('esm')(module);
+// const { decode } = esm('../src/base64');
+const { decode } = require('../dist/base64');
+
+if(_Buffer) g.Buffer = _Buffer;
+if(_atob) g.atob = _atob;
+
+require('chai').should();
+
 // For encoding test I had used information presented in Base64 Wikipedia Page (English Version).
 // For more information: http://en.wikipedia.org/wiki/Base64
 describe('# Decoding Tests', function(){
 
-  describe('> Decode strings', function(){
+  describe('> .decode(str)', function(){
 
     it('Decode a Wikipedia Leviathan Quote Example', function() {
       //Wikipedia first example: A quote from Thomas Hobbes' Leviathan:
@@ -31,7 +43,7 @@ describe('# Decoding Tests', function(){
       decode('c3VyZS4=').should.equal('sure.');
     });
 
-    it('Random tests founded on internet', function() {
+    it('Random tests found on internet', function() {
       //http://examples.javacodegeeks.com/core-java/apache/commons/codec/encode-base64/
       decode('SmF2YWNvZGVnZWVrcw==').should.equal('Javacodegeeks');
       //http://pymotw.com/2/base64/
