@@ -7,12 +7,11 @@
 *
 *
 *  @license MIT
-*  @version 2.0.0
-*  @umd AMD, Browser, CommonJs
+*  @version 2.1.0
 *  @author Dumitru Uzun (DUzun.Me)
 */
 
-export const VERSION = '2.0.0';
+export const VERSION = '2.1.0';
 
 import _atob from './atob';
 import _btoa from './btoa';
@@ -103,7 +102,7 @@ export { _btoa as _btoa };
 // Make sure atob and btoa exists in the environment
 export function polyfill(global) {
     if ( !global ) {
-        global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this : self : global : window;
+        global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this || new Function('return this')() : self : global : window;
     }
     if ( global ) {
         if ( typeof atob == 'undefined' ) {
@@ -145,4 +144,4 @@ export function bindProto(__) {
 }
 
 // Add String.prototype methods:
-bindProto(String.prototype);
+// bindProto(String.prototype);

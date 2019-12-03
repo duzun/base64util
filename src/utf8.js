@@ -1,8 +1,8 @@
 
-/*globals unescape, escape*/
+/*globals unescape, escape, decodeURIComponent, encodeURI*/
 
 /// Encode multi-byte into UTF-8 string
-export const utf8Encode = (str) => unescape( encodeURI( str ) );
+export function utf8Encode(str) { return unescape( encodeURI( str ) ); }
 
 /// Decode UTF-8 string to multi-byte string
-export const utf8Decode = (str) => decodeURIComponent( escape( str ) );
+export function utf8Decode(str) { return decodeURIComponent( escape( str ) ); }
