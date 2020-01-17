@@ -30,6 +30,9 @@ cache:
 env:
   - COMMAND=test
 
+# before_script:
+#   - npm i -g npx
+
 script:
   - npm run ${COMMAND:-"test"}
 
