@@ -1,4 +1,4 @@
-# base64util [![Build Status](https://travis-ci.org/duzun/base64util.svg?branch=master)](https://travis-ci.org/duzun/base64util) [![codecov](https://codecov.io/gh/duzun/base64util/branch/master/graph/badge.svg)](https://codecov.io/gh/duzun/base64util)
+# base64util [![Build Status](https://travis-ci.com/duzun/base64util.svg?branch=master)](https://travis-ci.com/duzun/base64util) [![codecov](https://codecov.io/gh/duzun/base64util/branch/master/graph/badge.svg)](https://codecov.io/gh/duzun/base64util)
 base64 encode/decode utility for browsers and node.js,
 with polyfill and URL friendly format.
 
