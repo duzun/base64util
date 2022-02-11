@@ -1,7 +1,7 @@
 
 // const esm = require('esm')(module);
 // const { bindProto } = esm('../src/base64');
-const { bindProto } = require('../dist/base64');
+const { bindProto, polyfill } = require('../dist/base64');
 
 require('chai').should();
 
@@ -37,5 +37,35 @@ describe('# bindProto(String.prototype)', function () {
 
         'а <<>>  я'.base64UrlEncode().should.equal('0LAgPDw-PiAg0Y8');
         '0LAgPDw-PiAg0Y8'.base64UrlDecode().should.equal('а <<>>  я');
+    });
+});
+
+describe('# polyfill()', function () {
+    const g = typeof global == 'undefined' ? window : global;
+
+    delete g.atob;
+    delete g.btoa;
+
+    polyfill();
+
+    it('should add global.atob()', function () {
+        g.atob('YW55IGNhcm5hbCBwbGVhc3VyZS4=').should.equal('any carnal pleasure.');
+    });
+
+    it('should add global.btoa()', function () {
+        g.btoa('any carnal pleasure.').should.equal('YW55IGNhcm5hbCBwbGVhc3VyZS4=');
+    });
+});
+
+describe('# polyfill(global)', function () {
+    var global = {};
+    polyfill(global);
+
+    it('should add global.atob()', function () {
+        global.atob('YW55IGNhcm5hbCBwbGVhc3VyZS4=').should.equal('any carnal pleasure.');
+    });
+
+    it('should add global.btoa()', function () {
+        global.btoa('any carnal pleasure.').should.equal('YW55IGNhcm5hbCBwbGVhc3VyZS4=');
     });
 });

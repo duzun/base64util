@@ -7,11 +7,11 @@
 *
 *
 *  @license MIT
-*  @version 2.1.0
+*  @version 2.2.0
 *  @author Dumitru Uzun (DUzun.Me)
 */
 
-export const VERSION = '2.1.0';
+export const VERSION = '2.2.0';
 
 import _atob from './atob';
 import _btoa from './btoa';
@@ -101,15 +101,27 @@ export { _btoa as _btoa };
 
 // Make sure atob and btoa exists in the environment
 export function polyfill(global) {
-    if ( !global ) {
-        global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this || new Function('return this')() : self : global : window;
-    }
     if ( global ) {
-        if ( typeof atob == 'undefined' ) {
+        if (typeof global.atob == 'undefined') {
             global.atob = _atob;
         }
-        if ( typeof btoa == 'undefined' ) {
+        if (typeof global.btoa == 'undefined') {
             global.btoa = _btoa;
+        }
+    }
+    else {
+        const no_atob = typeof atob == 'undefined';
+        const no_btoa = typeof btoa == 'undefined';
+
+        if (no_atob || no_btoa) {
+            global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this || new Function('return this')() : self : global : window;
+
+            if (no_atob) {
+                global.atob = _atob;
+            }
+            if (no_btoa) {
+                global.btoa = _btoa;
+            }
         }
     }
 }
