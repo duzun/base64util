@@ -146,10 +146,10 @@
     *
     *
     *  @license MIT
-    *  @version 2.1.0
+    *  @version 2.2.0
     *  @author Dumitru Uzun (DUzun.Me)
     */
-    var VERSION = '2.1.0';
+    var VERSION = '2.2.0';
 
     function byteDecode(data) {
       var ret = data;
@@ -211,17 +211,28 @@
     } // multi-byte string - common JS String - used for text data - get encoded/decoded to/from utf8
 
     function polyfill(global) {
-      if (!global) {
-        global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this || new Function('return this')() : self : global : window;
-      }
-
       if (global) {
-        if (typeof atob == 'undefined') {
+        if (typeof global.atob == 'undefined') {
           global.atob = _atob;
         }
 
-        if (typeof btoa == 'undefined') {
+        if (typeof global.btoa == 'undefined') {
           global.btoa = _btoa;
+        }
+      } else {
+        var no_atob = typeof atob == 'undefined';
+        var no_btoa = typeof btoa == 'undefined';
+
+        if (no_atob || no_btoa) {
+          global = typeof window == 'undefined' ? typeof global == 'undefined' ? typeof self == 'undefined' ? this || new Function('return this')() : self : global : window;
+
+          if (no_atob) {
+            global.atob = _atob;
+          }
+
+          if (no_btoa) {
+            global.btoa = _btoa;
+          }
         }
       }
     }
