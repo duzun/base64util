@@ -1,6 +1,8 @@
 /**
  * Gulp file for base64util project.
  *
+ * @deprecated This file is here for historical reason only. Use `npm run build` instead!
+ *
  * @author  Dumitru Uzun (DUzun.me)
  * @version  2.0.0
  */
