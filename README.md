@@ -2,7 +2,7 @@
 base64 encode/decode utility for browsers and node.js,
 with polyfill and URL friendly format.
 
-Works with multi-byte and utf8 strings.
+Works with multi-byte and utf8 [strings](https://github.com/duzun/string-encode.js#the-theory-of-string-).
 
 ## Usage
 
