@@ -1,7 +1,8 @@
 // rollup.config.js
-import babel from 'rollup-plugin-babel';
-import { terser } from 'rollup-plugin-terser';
-import { module, main, unpkg } from './package.json';
+import babel from '@rollup/plugin-babel';
+import terser from '@rollup/plugin-terser';
+import packageJson from './package.json' assert { type: "json" };
+const { module, main, unpkg } = packageJson;
 
 export default {
     input: module,
