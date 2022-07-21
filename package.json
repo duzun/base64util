@@ -49,14 +49,16 @@
     "rollup-plugin-terser": "^7.0.2",
     "verup": "^1.7.1"
   },
-  "optionalDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-better-rollup": "^4.0.1",
-    "gulp-load-plugins": "^2.0.6",
-    "gulp-plugins": "0.0.18",
-    "gulp-rename": "^2.0.0",
-    "gulp-sourcemaps": "^2.6.5"
+  "extra": {
+    "ex-devDependencies": {
+      "gulp": "^4.0.2",
+      "gulp-babel": "^8.0.0",
+      "gulp-better-rollup": "^4.0.1",
+      "gulp-load-plugins": "^2.0.6",
+      "gulp-plugins": "0.0.18",
+      "gulp-rename": "^2.0.0",
+      "gulp-sourcemaps": "^2.6.5"
+    }
   },
   "browserslist": "> 0.25%, not dead",
   "jshintConfig": {
