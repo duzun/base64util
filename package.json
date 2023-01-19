@@ -8,7 +8,7 @@
   "unpkg": "dist/base64.min.js",
   "reveal": true,
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.mjs",
     "test": "mocha --reporter spec",
     "coverage": "npx nyc --reporter=lcov --reporter=text-summary npm run test",
     "jest": "npx jest",
@@ -44,7 +44,7 @@
     "@babel/preset-env": "^7.12.11",
     "chai": "^4.2.0",
     "mocha": "^6.2.3",
-    "rollup": "^2.35.1",
+    "rollup": "^3.10.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^7.0.2",
     "verup": "^1.7.1"
